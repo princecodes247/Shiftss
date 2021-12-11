@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+    <!-- <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+    <title>Shifts</title>
+  </head>
+  <body>
+    <section>
+    <h1>Shifts!</h1>
+      <form action="">
+        <label for="">
+          <p>Heading</p>
+          <input id="heading" type="text">
+        </label>
+        <label for="">
+          <p>Subheading</p>
+          <input id="subheading" type="text">
+        </label>
+
+        <!-- <label for="">
+          <p>Type of shift</p>
+          <input type="text">
+        </label> -->
+
+        <label for="">
+          <p>Number of Groups</p>
+          <input id="groupsNum" type="number" max="26" min="2">
+        </label>
+        <label for="">
+          <p>Group Names</p> 
+          <input type="text" class="groupName" value="A">
+          <input type="text" class="groupName" value="B">
+          <input type="text" class="groupName" value="C">
+        </label>
+        <div class="">
+          <label for="">
+           <p>Any Leading Shift?</p>
+           <input type="checkbox" name="" id="isLeadingShift">
+         </label>
+         <label for="">
+           <p>Number of days for leading shift</p>
+           <input type="number" name="leadingShiftDays" id="leadingShiftDays" min="0" max="4">
+         </label>
+         </div>
+        <!-- <label for="">
+          <p>Duration</p>
+          <select name="" id="durationType">
+            <option value="day">A Day</option>
+            <option value="days">Some Days</option>
+            <option value="month" selected>One Month</option>
+            <option value="months">Some Months</option>
+              <option value="year">A Year</option>
+          </select>
+        </label> -->
+        <label for="">
+          <p>Month</p>
+          <select name="" id="monthsList">
+            <option value="day">A Day</option>
+          </select>
+        </label>
+        <label for="">
+          <p>Year</p>
+          <select name="" id="yearsList">
+            <option value="day">A Day</option>
+          </select>
+        </label>
+
+        <!-- FOR DAYS -->
+        <!-- <div>
+          <label for="">
+            <p>From </p>
+            <input type="text">
+          </label>
+          <label for="">
+            <p>To </p>
+            <input type="text">
+          </label>
+        </div> -->
+        <label for="">
+          <p>How long is a shift (in days)</p>
+          <input id="shiftLength" type="number">
+        </label>
+        <label for="">
+          <input type="checkbox" name="" id="">
+          <p>Days to skip (like Public holidays)</p>
+          <input type="text">
+        </label>
+        <!-- <label for="">
+          <p>Exception Options</p>
+          <input type="checkbox" name="" id="">
+         
+        </label> -->
+      
+         <label for="">
+          <p>Save Configuration</p>
+          <input type="checkbox" name="" id="">
+         
+        </label>
+    
+      </form>
+    </section>
+    <section>
+      <h2>Result</h2>
+      <div class="result">
+        <h1 id="headingTarget">Heading</h1>
+        <h3 id="subheadingTarget">Heading</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+            <th>Shifts</th>
+            <th>Notes</th>
+            </tr>
+            <tr>
+              <th>__</th>
+            <th>Shifts</th>
+            <th>__</th>
+            </tr>
+          </thead>
+          <tbody>
+           
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <script src="./shifter.js"></script>
+</body>
+</html>
