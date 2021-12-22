@@ -19,6 +19,7 @@ let exceptions = [2,6]
   const [groupsNum, setGroupsNum] = useState(0);
   const [workTable, setWorkTable] = useState([]);
   const [groups, setGroups] = useState(["A", "B", "C"]);
+  const [roaster, setRoaster] = useState([]);
   const [groupName, setGroupName] = useState("");
   const [isLeadingShift, setIsLeadingShift] = useState(false);
   const [leadingShiftDays, setLeadingShiftDays] = useState(0);
@@ -36,22 +37,23 @@ const Row = (props) => {
 const Cell = (props) => {
 	return <td>{props.value}</td>
 }
-const rotateShift = (item) => {
-	let list = item
-	 let moved = list.shift()
-   list.push(moved)
-	return list
-
+const createRoaster = (groups, shiftLength, days) => {
+  for (var i = 1; i <= days; i++) {
+    let list = [] 
+    if (i % shiftLength == 0 ) {
+	     let moved = groups.shift()
+       groups.push(moved)
+    }
+    let list = 
+	setRoaster(list)
+  }
+  console.log(roaster)
 }
 useEffect(() => {
-	
-	for (let i = 0;  i < duration; i++) { 
-		setWorkTable(rotateShift(groupsList))
-		console.log(workTable)
-	}
+	createRoaster(["1", "2", "3"], 2, 14)
 	// return dd
 
-}, [groups])
+}, [])
 
   const GroupNameInput = () => {
   	return <input type="text" className="groupName" value="A"/>
@@ -146,7 +148,9 @@ useEffect(() => {
             </tr>
           </thead>
           <tbody>
-           
+           {roaster.map(day => {
+            return (<Row list={day}/>)
+           })}
           </tbody>
         </table>
       </div>
