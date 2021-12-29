@@ -5,7 +5,7 @@ resultSection.classList.add("hidden")
 
 let formDetails = {
 	roasterLength: 0,
-	squads: ["a", "C","v"],
+	squads: [],
 	leadingShift: [],
 	leadingShiftLength: 0,
 	days: 0,
@@ -86,7 +86,7 @@ createRoasterButton.addEventListener("click", () => {
 		formDetails.squads.push(groupInput.querySelector("input").value)
 	})
 	formDetails.shiftLength = shiftLengthInput.value
-	formDetails.shiftLength = 2
+	// formDetails.shiftLength = 2
 		formDetails.month = monthsList.value
 	formDetails.days = daysInMonth(formDetails.year, formDetails.month)
 	let test = Shifter(formDetails)
