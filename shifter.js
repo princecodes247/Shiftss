@@ -1,5 +1,5 @@
-let tbody = document.querySelector("tbody")
-
+let result = document.querySelector(".result")
+result.classList.toggle("hidden")
 let squads = ["A", "B", "F"]
 let shifts = []
 let shiftLength = 2
@@ -45,10 +45,10 @@ let addLeadingShifts = (shift, length = 0) => {
 
 let makeTable = (data) => {
     data.forEach((item, index) => {
-        makeRow(item, tbody, index+1)
+        makeRow(item, result, index+1)
     })
 }
 
-addLeadingShifts(leadingShifts, 3)
-createShifts()
-makeTable(shifts)
+// addLeadingShifts(leadingShifts, 3)
+// createShifts()
+// makeTable(shifts)
