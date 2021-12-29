@@ -11,7 +11,7 @@
     <section>
     <h1>Shifts!</h1>
       <form action="">
-        <label for="">
+     <!--    <label for="">
           <p>Heading</p>
           <input id="heading" type="text">
         </label>
@@ -19,27 +19,35 @@
           <p>Subheading</p>
           <input id="subheading" type="text">
         </label>
-
+ -->
         <!-- <label for="">
           <p>Type of shift</p>
           <input type="text">
         </label> -->
 
-        <label for="">
+        <!-- <label for="">
           <p>Number of Groups</p>
           <input id="groupsNum" type="number" max="26" min="2">
-        </label>
+        </label> -->
         <label for="">
           <p>Group Names</p> 
-          <input type="text" class="groupName" value="A">
-          <input type="text" class="groupName" value="B">
-          <input type="text" class="groupName" value="C">
+          <span class="">
+            <input type="text" class="groupName" value="A">
+            <button>X</button>
+          </span>
+        
+          <button>Add Group</button>
         </label>
         <div class="">
-          <label for="">
-           <p>Any Leading Shift?</p>
-           <input type="checkbox" name="" id="isLeadingShift">
-         </label>
+         <div class="">
+           <p>Leading Shift</p>
+           <button>A</button>
+           <button>B</button>
+           <button>C</button>
+         </div>
+         <div class="">
+           <textarea name="" id="" cols="30" rows="4"></textarea>
+         </div>
          <label for="">
            <p>Number of days for leading shift</p>
            <input type="number" name="leadingShiftDays" id="leadingShiftDays" min="0" max="4">

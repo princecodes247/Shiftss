@@ -2,33 +2,53 @@ let tbody = document.querySelector("tbody")
 
 let squads = ["A", "B", "F"]
 let shifts = []
-tbody.innerHTML = "hi"
-
+let shiftLength = 2
+let leadingShifts = ["F", "A", "B"]
 let days = 31
-tbody.innerHTML = "hi"
+let dt = new Date()
 let makeCell = (data, target) => {
     let cell = document.createElement("td")
     cell.innerHTML = data
     target.appendChild(cell)
 }
 
-let makeRow = ( data, target ) => {
+let makeRow = ( data, target, rowID = 0) => {
     let row = document.createElement("tr")
+    makeCell(rowID, row)
     data.forEach(item => {
         makeCell(item, row)
     })
     target.appendChild(row)
     
 }
-for (var i = 0; i < days; i++) {
-    shifts.push([...squads])
-    let popped = squads.shift()
-    squads.push(popped)
+
+let createShifts = () => {
+    for (var i = 1; i <= days; i++) {
+
+        shifts.push([...squads])
+        if (i % shiftLength == 0) {
+            let popped = squads.shift()
+        squads.push(popped)
+        }
+    }
 }
-squads.push("popped")
+let addLeadingShifts = (shift, length = 0) => {
+    if (length == 0) {return}
+    for (var i = 1; i <= length; i++) {
+        shifts.push([...shift])
+    }
+    squads = shift
+    let popped = squads.shift()
+        squads.push(popped)
+    days -= length
+}
 
-makeRow(shifts[0], tbody)
-makeRow(shifts[1], tbody)
-makeRow(shifts[2], tbody)
-makeRow(shifts[3], tbody)
+let makeTable = (data) => {
+    data.forEach((item, index) => {
+        makeRow(item, tbody, index+1)
+    })
+}
 
+addLeadingShifts(leadingShifts, 3)
+createShifts()
+makeTable(shifts)
