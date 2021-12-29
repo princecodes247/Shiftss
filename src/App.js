@@ -38,7 +38,7 @@ const Cell = (props) => {
 	return <td>{props.value}</td>
 }
 const createRoaster = (groups, shiftLength, days) => {
-  for (var i = 1; i <= days; i++) {
+  for (let i = 1; i <= days; i++) {
     let list = [] 
     if (i % shiftLength == 0 ) {
 	     let moved = groups.shift()
