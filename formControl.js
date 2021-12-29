@@ -1,6 +1,7 @@
 // Globals
 let formSection = document.querySelector("#form")
 let resultSection = document.querySelector("#result")
+resultSection.classList.add("hidden")
 
 // For Groups section
 let groupsInput = document.querySelector("#groupsInput")
@@ -72,6 +73,9 @@ let backToFormButton = document.querySelector("button#backToForm")
 createRoasterButton.addEventListener("click", () => {
 	formSection.classList.add("hidden")
 	resultSection.classList.remove("hidden")
+	let test = Shifter()
+	let tryy = test.createShifts()
+	test.makeTable(tryy)
 })
 
 backToFormButton.addEventListener("click", () => {

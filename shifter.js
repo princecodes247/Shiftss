@@ -1,52 +1,58 @@
 
-const Shifter = () => {
-    this.squads = ["A", "B", "C"]
-    this.shifts = []
-    this.shiftLength = 2
-    this.leadingShifts = ["C", "A", "B"]
-    this.days = 31
+const Shifter = (
+        options = {}
+    ) => {
+    let _this = {}
+    _this.squads = options.squads || ["A", "B", "C"]
+    // _this.shifts = options.shifts || []
+    _this.shiftLength = options.shiftLength || 2
+    _this.leadingShifts = options.leadingShifts || ["C", "A", "B"]
+    _this.days = options.days || 31
+    _this.tableBody = document.querySelector(".shifterTarget")
 
-    this.makeCell = (data, target) => {
+    _this.makeCell = (data, target) => {
             let cell = document.createElement("td")
             cell.innerHTML = data
             target.appendChild(cell)
         }
 
-    this.makeRow = ( data, target, rowID = 0) => {
+    _this.makeRow = ( data, target, rowID = 0) => {
         let row = document.createElement("tr")
-        makeCell(rowID, row)
+        _this.makeCell(rowID, row)
         data.forEach(item => {
-            makeCell(item, row)
+            _this.makeCell(item, row)
         })
         target.appendChild(row)
         
     }
 
-    this.createShifts = () => {
-        for (var i = 1; i <= days; i++) {
+    _this.createShifts = () => {
+        let shifts = []
+        for (var i = 1; i <= _this.days; i++) {
 
-            shifts.push([...squads])
-            if (i % shiftLength == 0) {
-                let popped = squads.shift()
-            squads.push(popped)
+            shifts.push([..._this.squads])
+            if (i % _this.shiftLength == 0) {
+                let popped = _this.squads.shift()
+            _this.squads.push(popped)
             }
         }
+        return shifts
     }
 
-    this.addLeadingShifts = (shift, length = 0) => {
+    _this.addLeadingShifts = (shift, length = 0) => {
         if (length == 0) {return}
         for (var i = 1; i <= length; i++) {
-            shifts.push([...shift])
+            _this.shifts.push([...shift])
         }
-        squads = shift
-        let popped = squads.shift()
-            squads.push(popped)
-        days -= length
+        _this.squads = shift
+        let popped = _this.squads.shift()
+            _this.squads.push(popped)
+        _this.days -= length
     }
 
-    this.makeTable = (data) => {
+    _this.makeTable = (data) => {
         data.forEach((item, index) => {
-            makeRow(item, result, index+1)
+            _this.makeRow(item, _this.tableBody, index+1)
         })
     }
 
@@ -54,5 +60,5 @@ const Shifter = () => {
 // createShifts()
 // makeTable(shifts)
 
-return this
+return _this
 }
