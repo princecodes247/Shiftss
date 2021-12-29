@@ -3,6 +3,18 @@ let formSection = document.querySelector("#form")
 let resultSection = document.querySelector("#result")
 resultSection.classList.add("hidden")
 
+let formDetails = {
+	roasterLength: 0,
+	squads: ["a", "C","v"],
+	leadingShift: [],
+	leadingShiftLength: 0,
+	days: 0,
+	month: 0,
+	year: 2021,
+	shiftLength: 2,
+
+}
+
 // For Groups section
 let groupsInput = document.querySelector("#groupsInput")
 let addGroup = document.querySelector("button.addGroup")
@@ -15,6 +27,7 @@ let groupInput = () => {
 	button.innerHTML = "X"
 	button.onclick = e => deleteGroupInput(e)
 	let container = document.createElement("span")
+	container.classList.add("groupInput")
 	container.appendChild(input)
 	container.appendChild(button)
 	groupsInput.appendChild(container)
@@ -48,18 +61,11 @@ let daysInMonth = (year, month) => {
 
 let monthsList = document.querySelector("#monthsList")
 
-monthsList.addEventListener("change", () => {
-	month = monthsList.value
-	console.log(daysInMonth(2021, month))
-})
 
 // Shift Length 
 
 let shiftLengthInput = document.querySelector("#shiftLength")
 
-shiftLengthInput.addEventListener("input", () => {
-	shiftLength = shiftLengthInput.value
-})
 // END 
 
 
@@ -73,7 +79,17 @@ let backToFormButton = document.querySelector("button#backToForm")
 createRoasterButton.addEventListener("click", () => {
 	formSection.classList.add("hidden")
 	resultSection.classList.remove("hidden")
-	let test = Shifter()
+	let groupsInput = document.querySelectorAll(".groupInput")
+	groupsInput.forEach(groupInput => {
+
+		console.log("groupInput")
+		formDetails.squads.push(groupInput.querySelector("input").value)
+	})
+	formDetails.shiftLength = shiftLengthInput.value
+	formDetails.shiftLength = 2
+		formDetails.month = monthsList.value
+	formDetails.days = daysInMonth(formDetails.year, formDetails.month)
+	let test = Shifter(formDetails)
 	let tryy = test.createShifts()
 	test.makeTable(tryy)
 })

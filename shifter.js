@@ -22,6 +22,7 @@ const Shifter = (
         data.forEach(item => {
             _this.makeCell(item, row)
         })
+        
         target.appendChild(row)
         
     }
