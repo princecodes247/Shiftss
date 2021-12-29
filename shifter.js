@@ -1,11 +1,11 @@
-let result = document.querySelector(".result")
+let result = document.querySelector("#result")
 result.classList.toggle("hidden")
 let squads = ["A", "B", "F"]
 let shifts = []
 let shiftLength = 2
 let leadingShifts = ["F", "A", "B"]
 let days = 31
-let dt = new Date()
+
 let makeCell = (data, target) => {
     let cell = document.createElement("td")
     cell.innerHTML = data

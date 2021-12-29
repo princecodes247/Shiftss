@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <section>
+    <section id="form">
     <h1>Shifts!</h1>
-      <form action="">
+      <div >
      <!--    <label for="">
           <p>Heading</p>
           <input id="heading" type="text">
@@ -30,14 +30,13 @@
           <p>Number of Groups</p>
           <input id="groupsNum" type="number" max="26" min="2">
         </label> -->
-        <label for="">
+        <label for="" >
           <p>Group Names</p> 
-          <span class="">
-            <input type="text" class="groupName" value="A">
-            <button>X</button>
-          </span>
+          <div id="groupsInput">
+            
+          </div>
         
-          <button>Add Group</button>
+          <button class="addGroup">Add Group</button>
         </label>
         <div class="">
          <div class="">
@@ -67,7 +66,19 @@
         <label for="">
           <p>Month</p>
           <select name="" id="monthsList">
-            <option value="day">A Day</option>
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+
           </select>
         </label>
         <label for="">
@@ -109,9 +120,11 @@
          
         </label>
     
-      </form>
+      </div>
+      <button id="createRoaster">Create Roaster</button>
     </section>
-    <section class="result">
+    <section id="result">
+      <button id="backToForm">Back</button>
       <h2>Result</h2>
       <div class="">
         <h1 id="headingTarget">Heading</h1>
