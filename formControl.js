@@ -17,33 +17,10 @@ let formDetails = {
 
 // For Groups section
 let groupsInput = document.querySelector("#groupsInput")
-let addGroup = document.querySelector("button.addGroup")
-
-let groupInput = () => {
-	let input = document.createElement("input")
-	input.value = ""
-	input.placeholder = "Enter group name"
-	let button = document.createElement("button")
-	button.innerHTML = "X"
-	button.onclick = e => deleteGroupInput(e)
-	let container = document.createElement("span")
-	container.classList.add("groupInput")
-	container.appendChild(input)
-	container.appendChild(button)
-	groupsInput.appendChild(container)
+let commaSplit = (value) => {
+  let res = value.split(',')
+  return res
 }
-
-addGroup.addEventListener("click", ()=>{
-	groupInput()
-	
-})
-
-let deleteGroupInput = e => {
-	let targ = e.target.parentNode
-	let parent = targ.parentNode
-	parent.removeChild(targ)
-}
-
 // END
 
 // Leading Shifts 
@@ -79,14 +56,14 @@ let backToFormButton = document.querySelector("button#backToForm")
 createRoasterButton.addEventListener("click", () => {
 	formSection.classList.add("hidden")
 	resultSection.classList.remove("hidden")
-	let groupsInput = document.querySelectorAll(".groupInput")
-	groupsInput.forEach(groupInput => {
+	
+	commaSplit(groupsInput.value).forEach(group => {
 
 		console.log("groupInput")
-		formDetails.squads.push(groupInput.querySelector("input").value)
+		formDetails.squads.push(group)
 	})
 	formDetails.shiftLength = shiftLengthInput.value
-	// formDetails.shiftLength = 2
+	 //formDetails.shiftLength = 2
 		formDetails.month = monthsList.value
 	formDetails.days = daysInMonth(formDetails.year, formDetails.month)
 	let test = Shifter(formDetails)

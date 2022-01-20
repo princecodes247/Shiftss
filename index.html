@@ -11,108 +11,91 @@
   <body>
     <section id="form">
     <h1>Shifts!</h1>
-      <div >
-     <!--    <label for="">
-          <p>Heading</p>
-          <input id="heading" type="text">
-        </label>
-        <label for="">
-          <p>Subheading</p>
-          <input id="subheading" type="text">
-        </label>
- -->
-        <!-- <label for="">
-          <p>Type of shift</p>
-          <input type="text">
-        </label> -->
+      <div class="formSection" >
 
-        <!-- <label for="">
-          <p>Number of Groups</p>
-          <input id="groupsNum" type="number" max="26" min="2">
-        </label> -->
-        <label for="" >
-          <p>Group Names</p> 
-          <div id="groupsInput">
-            
-          </div>
-        
-          <button class="addGroup">Add Group</button>
-        </label>
-        <div class="">
+         <div class="">
          <div class="">
            <p>Leading Shift</p>
-           <button>A</button>
-           <button>B</button>
-           <button>C</button>
+            <input type="text" name="" id="groupsInput" placeholder="A, B, C">
+      
          </div>
-         <div class="">
-           <textarea name="" id="" cols="30" rows="4"></textarea>
-         </div>
-         <label for="">
-           <p>Number of days for leading shift</p>
-           <input type="number" name="leadingShiftDays" id="leadingShiftDays" min="0" max="4">
-         </label>
-         </div>
-        <!-- <label for="">
-          <p>Duration</p>
-          <select name="" id="durationType">
-            <option value="day">A Day</option>
-            <option value="days">Some Days</option>
-            <option value="month" selected>One Month</option>
-            <option value="months">Some Months</option>
-              <option value="year">A Year</option>
-          </select>
-        </label> -->
-        <label for="">
-          <p>Month</p>
-          <select name="" id="monthsList">
-            <option value="1">January</option>
-            <option value="2">February</option>
-            <option value="3">March</option>
-            <option value="4">April</option>
-            <option value="5">May</option>
-            <option value="6">June</option>
-            <option value="7">July</option>
-            <option value="8">August</option>
-            <option value="9">September</option>
-            <option value="10">October</option>
-            <option value="11">November</option>
-            <option value="12">December</option>
 
-          </select>
-        </label>
-        <label for="">
-          <p>Year</p>
-          <select name="" id="yearsList">
-            <option value="day">A Day</option>
-          </select>
-        </label>
-
-        <!-- FOR DAYS -->
-        <!-- <div>
+        <div class="sideBySide">
+                       <label for="">
+                         <p>Number of days for leading shift</p>
+                         <select name="" id="shiftLength">
+                           <option value="1">1</option>
+                           <option value="2">2</option>
+                           <option value="3">3</option>
+                           <option value="4">4</option>
+                           <option value="5">5</option>
+                           <option value="6">6</option>
+                           <option value="7">7</option>
+                           <option value="8">8</option>
+                           <option value="9">9</option>
+                           <option value="10">10</option>
+                           <option value="11">11</option>
+                           <option value="12">12</option>
+                         </select>
+                       </label>
+                       <label for="">
+                         <p>How long is a shift (in days)</p>
+                         <select name="" id="shiftLength">
+                           <option value="1">1</option>
+                           <option value="2">2</option>
+                           <option value="3">3</option>
+                           <option value="4">4</option>
+                           <option value="5">5</option>
+                           <option value="6">6</option>
+                           <option value="7">7</option>
+                           <option value="8">8</option>
+                           <option value="9">9</option>
+                           <option value="10">10</option>
+                           <option value="11">11</option>
+                           <option value="12">12</option>
+                         </select>
+                       </label>
+        </div>
+      <div class="sideBySide">
           <label for="">
-            <p>From </p>
-            <input type="text">
+            <p>Month</p>
+            <select name="" id="monthsList">
+              <option value="1">January</option>
+              <option value="2">February</option>
+              <option value="3">March</option>
+              <option value="4">April</option>
+              <option value="5">May</option>
+              <option value="6">June</option>
+              <option value="7">July</option>
+              <option value="8">August</option>
+              <option value="9">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+        
+            </select>
           </label>
           <label for="">
-            <p>To </p>
-            <input type="text">
+            <p>Year</p>
+            <select name="" id="yearsList">
+              <option value="1">2019</option>
+              <option value="2">2020</option>
+              <option value="3">2021</option>
+              <option value="4">2022</option>
+              <option value="5">2023</option>
+              <option value="6">2024</option>
+              <option value="7">2025</option>
+              <option value="8">2026</option>
+              <option value="9">2027</option>
+              <option value="10">2028</option>
+        
+            </select>
           </label>
-        </div> -->
+      </div>
         <label for="">
-          <p>How long is a shift (in days)</p>
-          <input id="shiftLength" type="number">
-        </label>
-        <label for="">
-          <input type="checkbox" name="" id="">
           <p>Days to skip (like Public holidays)</p>
           <input type="text">
         </label>
-        <!-- <label for="">
-          <p>Exception Options</p>
-          <input type="checkbox" name="" id="">
-         
-        </label> -->
       
          <label for="">
           <p>Save Configuration</p>
